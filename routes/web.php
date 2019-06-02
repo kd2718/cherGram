@@ -1,4 +1,5 @@
 <?php
+use App\Http\Controllers\PostsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,4 +20,5 @@ Auth::routes();
 
 Route::get('/profile/{user}', 'ProfilesController@index')->name('profile.show');
 Route::get('/p/create', 'PostsController@create')->name('post.create');
+Route::get('/p/{post}', 'PostsController@show');
 Route::post('/p', 'PostsController@store')->name('post.store');

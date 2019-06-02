@@ -9,10 +9,10 @@
         <div class="col-9 pt-5">
             <div class="d-flex justify-content-between align-items-baseline">
                 <h1>{{$user->username}}</h1>
-                <a href="#">Add New Post</a>
+                <a href="/p/create">Add New Post</a>
             </div>
             <div class="d-flex">
-                <div class="pr-5"><strong>153</strong> posts</div>
+                <div class="pr-5"><strong>{{$user->posts->count()}}</strong> posts</div>
                 <div class="pr-5"><strong>22</strong> followers</div>
                 <div class="pr-5"><strong>234</strong> following</div>
             </div>
@@ -22,15 +22,14 @@
         </div>
     </div>
     <div class="row pt-5">
-        <div class="col-4">
-            <img src="https://www.buyritebeauty.com/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/c/h/chm-2251_omni_1_.jpg" class="w-100 h-250">
+        @foreach($user->posts as $post)
+
+        <div class="col-4 pb-4">
+            <a href="/p/{{$post->id}}">
+                <img src="/storage/{{$post->image}}" class="w-100 h-250">
+            </a>
         </div>
-        <div class="col-4">
-            <img src="https://imagesvc.timeincapp.com/v3/fan/image?url=https://clipperholics.com/wp-content/uploads/getty-images/2017/07/1062232558.jpeg&c=sc&w=3200&h=2133" class="w-100">
-        </div>
-        <div class="col-4">
-            <img src="https://www.baldingbeards.com/wp-content/uploads/2016/10/best-hair-clippers.jpg" class="w-100">
-        </div>
+        @endforeach
     </div>
 </div>
 @endsection

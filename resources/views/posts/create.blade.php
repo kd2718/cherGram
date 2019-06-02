@@ -27,7 +27,8 @@
 
             @error('image')
 
-                <strong>{{ $message }}</strong>
+    
+            <strong>{{ $message }}</strong>
             @enderror
 
         </div>
