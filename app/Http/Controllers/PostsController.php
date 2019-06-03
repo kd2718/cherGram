@@ -40,6 +40,9 @@ class PostsController extends Controller
     public function show(\App\Post $post)
     {
         //$p2 = Post::findOrFail($post);
-        dd($post);
+        //dd(auth()->user());
+        //dd($post);
+
+        return view("posts.show", compact('post'));
     }
 }
