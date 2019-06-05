@@ -2,38 +2,46 @@
 
 @section('content')
 <div class="container">
-    <div class="row">
-        <h1>Add New Post</h1>
-    </div>
+
     <form action="/p" enctype="multipart/form-data" method="POST">
+
         @csrf
-        <div class="row form-group">
-            <label for="caption" class="col-md-4 col-form-label">Post Caption</label>
-
-
-            <input id="caption" name="caption" type="text" class="form-control @error('caption') is-invalid @enderror" value="{{ old('caption') }}" autocomplete="caption" autofocus>
-
-            @error('caption')
-            <span class="invalid-feedback" role="alert">
-                <strong>{{ $message }}</strong>
-            </span>
-            @enderror
-
-        </div>
-
         <div class="row">
-            <label for="caption" class="col-md-4 col-form-label">Image</label>
-            <input type="file" class="form-control-file" id="image" name=image>
+            <div class="col-8 offset-2">
 
-            @error('image')
+                <div class="row">
+                    <h1>Add New Post</h1>
+                </div>
+                <div class="row form-group">
+                    <label for="caption" class="col-md-4 col-form-label">Post Caption</label>
 
-    
-            <strong>{{ $message }}</strong>
-            @enderror
 
-        </div>
-        <div class="row pt-4">
-            <button class="btn btn-primary">Add New Post</button>
+                    <input id="caption" name="caption" type="text" class="form-control @error('caption') is-invalid @enderror" value="{{ old('caption') }}" autocomplete="caption" autofocus>
+
+                    @error('caption')
+                    <span class="invalid-feedback" role="alert">
+                        <strong>{{ $message }}</strong>
+                    </span>
+                    @enderror
+
+                </div>
+
+                <div class="row">
+                    <label for="caption" class="col-md-4 col-form-label">Image</label>
+                    <input type="file" class="form-control-file" id="image" name=image>
+
+                    @error('image')
+
+
+                    <strong>{{ $message }}</strong>
+                    @enderror
+
+                </div>
+                <div class="row pt-4">
+                    <button class="btn btn-primary">Add New Post</button>
+                </div>
+
+            </div>
         </div>
     </form>
 </div>

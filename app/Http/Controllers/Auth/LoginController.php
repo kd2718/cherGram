@@ -21,10 +21,11 @@ class LoginController extends Controller
     use AuthenticatesUsers;
 
     /**
-     * Where to redirect users after login.
+     * Where to redirect users after login.deb-src http://deb.debian.org/debian-security/ stretch/updates main contrib non-free
      *
      * @var string
      */
+
     protected $redirectTo = '/home';
 
     /**
