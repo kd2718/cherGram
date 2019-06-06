@@ -27,6 +27,17 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+    protected static function boot()
+    {
+        parent::boot();
+        
+        static::created(function ($user){
+            $user->profile->create([
+                'title'=>$user->username
+            ]);
+        }
+        );
+    }
 
     /**
      * The attributes that should be cast to native types.
@@ -42,6 +53,7 @@ class User extends Authenticatable
         return $this->hasOne(Profile::class);
     }
 
+    
     /*
     public function posts()
     {
