@@ -23,7 +23,13 @@ export default {
         .then(responce => {
           this.status = ! this.status;
           console.log(responce.data);
+        })
+        .catch(errors => {
+          if(errors.response.status == 401) {
+            window.location = '/login';
+          }
         });
+
       }
   },
 
